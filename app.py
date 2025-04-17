@@ -24,7 +24,8 @@ def main():
     st.title("🧠 Data Science Quiz App")
 
     quizzes = load_quizzes()
-    quiz_names = list(quizzes.keys())
+    quiz_names = sorted(quizzes.keys(), key=lambda x: int(x.split(" - ")[0]))
+
 
     selected_quiz = st.selectbox("Choose a quiz", quiz_names)
 
